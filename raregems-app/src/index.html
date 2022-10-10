@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table {
+			margin: 0 auto;
+		}
+
+		.inline-block {
+			display: inline-block;
+		}
+
+		.logo {
+			width: 75px;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		h1 {
+			margin-top: 0px
+		}
+
+		.bold-and-center {
+			font-weight: bolder;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="text-center">
+		<div class="inline-block">
+			<img class="logo" src="./resources/images/logo.jpg" alt="logo">
+		</div>
+		<h1>RARE GEMS MARKETPLACE</h1>
+	</div>
+
+
+	<table>
+		<tbody> 
+			
+			<tr>
+				<td>
+					<label for="fname">Receiver address:</label>
+				</td>
+				<td>
+					<input type="text" id="raddress" name="raddress">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="fname">Tokens:</label>
+				</td>
+				<td>
+					<input type="text" id="rtokens" name="rtokens">
+				</td>
+
+				<td>
+					<button class="btn btn-info" type="button" id="transfer_token">AirDrop</button>
+				</td>
+
+			</tr>
+
+
+			<tr>
+				<td>
+					Display My Balance
+				</td>
+				<td>
+					<button class="btn btn-info" type="button" id="balance_display">Balance</button>
+				</td>
+
+				<tr>
+					<td>
+						Your Balance is:
+					</td>
+					<td>
+						<p id="BALANCE"></p>
+					</td>
+				</tr>
+
+			</tr>
+
+			<tr>
+				<td>
+					Click to Approve:
+				</td>
+				<td>
+					<button class="btn btn-info" type="button" id="approved_balance_display">Approve</button>
+				</td>
+			</tr>
+
+
+
+
+			<tr>
+				<td>
+					Display My Allowance
+				</td>
+				<td>
+					<button class="btn btn-info" type="button" id="allowance_display">Allowance</button>
+				</td>
+
+				<tr>
+					<td>
+						Allowance is:
+					</td>
+					<td>
+						<p id="ALLOWANCE"></p>
+					</td>
+				</tr>
+
+			</tr>
+
+			
+				
+			<tr>
+				<td>
+					Are you a Prime User(True/False)
+				</td>
+				<td>
+					<input type="text" id="isprime" name="tokens">
+				</td>
+				<td>
+					<button class="btn btn-info" type="button" id="register">Register</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><input type="text" id="address_unreg" name="tokens"></td>
+				<td><button class="btn btn-info" type="button" id="unregister">Unregister</button></td>
+			</tr>
+			<tr>
+				<td class="bold-and-center" colspan="3">Add a Product</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" id="name" name="name"></td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><input type="text" id="description" name="description"></td>
+			</tr>
+			<tr>
+				<td>Price(GEMS)</td>
+				<td><input type="text" id="price" name="price"></td>
+				<td>
+					<button class="btn btn-info" type="button" id="addproduct">Add Product</button>
+				</td>
+			</tr>
+			<tr>
+				<td class="bold-and-center" colspan="3">Add a Prime Product</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" id="name_prime" name="name"></td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><input type="text" id="description_prime" name="description"></td>
+			</tr>
+			<tr>
+				<td>Price(>10 GEMS)</td>
+				<td><input type="text" id="price_prime" name="price"></td>
+				<td>
+					<button class="btn btn-info" type="button" id="addprimeproduct">Add Prime Product</button>
+				</td>
+			</tr>
+			<tr>
+				<td class="bold-and-center" colspan="3">Delete Product</td>
+			</tr>
+			<tr>
+				<td>Product ID</td>
+				<td>
+					<input type="text" id="id_product_delete" name="tokens">
+				</td>
+				<td><button class="btn btn-info" type="button" id="delete">Delete Product</button> </td>
+			</tr>
+			<tr>
+				<td class="bold-and-center" colspan="3">Purchase prime product</td>
+			</tr>
+			<tr>
+				<td>Product ID</td>
+				<td>
+					<input type="text" id="id_product_prime" name="tokens">
+				</td>
+			</tr>
+			<tr>
+				<!-- <td>Price(gems)</td> -->
+				<!-- <td><input type="text" id="price_product_prime" name="tokens"></td> -->
+				<td><button class="btn btn-info" type="button" id="purchaseprime">Purchase Prime Product</button></td>
+			</tr>
+			<tr>
+				<td class="bold-and-center" colspan="3">
+					Purchase normal Product
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product ID
+				</td>
+				<td>
+					<input type="text" id="id_product" name="tokens">
+				</td>
+			</tr>
+			<tr>
+				<!-- <td>Price(gems)</td>
+				<td><input type="text" id="price_product" name="tokens"></td> -->
+				<td><button class="btn btn-info" type="button" id="purchase">Purchase Product</button></td>
+			</tr>
+
+			<tr>
+				<td class="bold-and-center" colspan="3">
+					Product information
+				</td>
+			</tr>
+			<tr>
+				<td>
+					ID
+				</td>
+				<td>
+					<input type="text" id="id_display" name="id">
+				</td>
+				<td>
+					<button class="btn btn-info" type="button" id="display">Display Products</button>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					ID:
+				</td>
+				<td>
+					<p id="ID"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Price:
+				</td>
+				<td>
+					<p id="PRICE"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Name:
+				</td>
+				<td>
+					<p id="NAME"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Description:
+				</td>
+				<td>
+					<p id="DESCRIPTION"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Owner:
+				</td>
+				<td>
+					<p id="OWNER"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Third party check:
+				</td>
+				<td>
+					<p id="THIRDPARTYCHECK"></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> -->
+<script src="js/dist/bootstrap.min.js"></script>
+<script src="js/dist/web3.min.js"></script>
+<script src="js/dist/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+<script >
+	var contract;
+	var rareGemsABI;
+	var gemsABI;
+	var abiRareGems;
+	var  abiToken;
+	var rareGemsAddress;
+	var gemsAddress;
+	var marketplace;
+	var token;
+	var balance;
+
+
+$.getJSON("../../../raregems-contrcat/build/raregemsabi.json", function (result) {
+	gemsABI=result;
+//   console.log(gemsABI);
+})
+
+$.getJSON("../../../raregems-contrcat/build/marketplace.json", function (result) {
+	rareGemsABI=result;
+//   console.log(gemsABI);
+})
+
+
+	// console.log(rareGemsABI);
+	$(document).ready(function () {
+		web3 = new Web3(web3.currentProvider);
+		// console.log(web3);
+		let networkId ;
+		web3.eth.net.getId().then((id)=>{
+		networkId = id;
+		//   console.log(networkId);
+		abiRareGems = rareGemsABI.abi;
+		console.log("abi",abiRareGems);
+        abiToken = gemsABI.abi;
+		// rareGemsAddress = rareGemsABI.networks[id].address;
+		rareGemsAddress = "0x31f10F8338ab9D99588074f46D0cfB3a92D88239";
+        // gemsAddress = gemsABI.networks[id].address;
+		gemsAddress ="0x02B3186033E16EEf8EFDb758C38C9825314f6d88";
+		// console.log("gemsAddress",gemsAddress);
+		// console.log("------------>",abiRareGems);
+		// console.log("------------>",rareGemsAddress);
+		contract = new web3.eth.Contract(abiRareGems, rareGemsAddress);
+		console.log("contract is",contract);
+		contractToken = new web3.eth.Contract(abiToken, gemsAddress);
+		  });
+		
+	})
+
+
+
+			$('#transfer_token').click(function() {
+            var receiver_address = $('#raddress').val();
+            var no_of_tokens = $('#rtokens').val();
+            web3.eth.requestAccounts().then(function (accounts) {
+                var acc = accounts[0];
+                console.log(acc);
+
+                return contractToken.methods.transfer(receiver_address,no_of_tokens).send({ from: accounts[0] });
+            }).then(function (tx) {
+                console.log(tx);
+            }).catch(function (tx) {
+                console.log(tx);
+            })
+        })
+
+	
+
+	
+	$('#register').click(function () {
+		var isprime = (($('#isprime').val()) === 'true');
+		console.log(isprime);
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.register(isprime).send({ from: accounts[0] });
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+	$('#unregister').click(function () {
+		var address = $('#address_unreg').val();
+
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.unregister(address).send({ from: accounts[0] });
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+
+	function myFunction(n, d, p) {
+		let productList = window.localStorage.getItem("productList");
+		let productItem = {
+			name: n,
+			description: d,
+			price: p
+		};
+		let resultArr = [];
+		if (productList && JSON.parse(productList)) {
+			resultArr = [...JSON.parse(productList), productItem];
+		} else {
+			resultArr = [productItem]
+		}
+		window.localStorage.setItem("productList",JSON.stringify(resultArr));
+		console.log(resultArr);
+	}
+
+
+	$('#addproduct').click(function () {
+		var name = $('#name').val();
+		var description = $('#description').val();
+		var price = $('#price').val();
+		myFunction(name, description, price);
+
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.createProduct(name, description, price).send({ from: accounts[0] });
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+	$('#addprimeproduct').click(function () {
+		var name = $('#name_prime').val();
+		var description = $('#description_prime').val();
+		var price = $('#price_prime').val();
+
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.createPrimeProduct(name, description, price).send({ from: accounts[0] });
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+	$('#delete').click(function () {
+		var id = $('#id_product_delete').val();
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.deleteProduct(id).send({ from: accounts[0] });
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+	$('#purchase').click(function () {
+		var id = $('#id_product').val();
+
+		console.log(id);
+		var price = parseInt($('#price_product').val());
+		console.log(price);
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.purchaseProduct(id).send({ from: accounts[0]});
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+	$('#purchaseprime').click(function () {
+		var id = $('#id_product_prime').val();
+		var price = $('#price_product_prime').val();
+		web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			return contract.methods.purchasePrimeProduct(id).send({ from: accounts[0] });
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+	})
+
+
+	$('#display').click(function () {
+		var id = $('#id_display').val();
+		contract.methods.viewProducts(id).call().then(function (details) {
+			document.getElementById("ID").innerHTML = details[0];
+			document.getElementById("PRICE").innerHTML = details[1];
+			document.getElementById("NAME").innerHTML = details[2];
+			document.getElementById("DESCRIPTION").innerHTML = details[3];
+			document.getElementById("OWNER").innerHTML = details[4];
+			document.getElementById("THIRDPARTYCHECK").innerHTML = details[5];
+		})
+	})
+
+
+	$('#balance_display').click(function () {		
+			web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			contract.methods.viewBalance().call({ from: accounts[0]}).then(function (bal) {
+				balance=bal;
+				console.log(bal);
+				document.getElementById("BALANCE").innerHTML = bal;
+			})
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+
+		})
+
+
+		$('#approved_balance_display').click(function () {		
+			web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			console.log(balance);
+				return contractToken.methods.approve(rareGemsAddress,balance).send({ from: accounts[0] })
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+		})
+
+
+
+
+		$('#allowance_display').click(function () {		
+			web3.eth.requestAccounts().then(function (accounts) {
+			var acc = accounts[0];
+			console.log(acc);
+			contractToken.methods.allowance(acc,rareGemsAddress).call({ from: accounts[0]}).then(function (all) {
+			
+				console.log(all);
+				document.getElementById("ALLOWANCE").innerHTML = all;
+			})
+		}).then(function (tx) {
+			console.log(tx);
+		}).catch(function (tx) {
+			console.log(tx);
+		})
+
+		})
+
+</script>
+
+
+</html>
